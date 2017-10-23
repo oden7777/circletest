@@ -1,3 +1,5 @@
-test:
-  override:
-    - echo Hello World
+version: 2
+jobs:
+  test:
+    override:
+      - echo Hello World
