@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    build:
+      context: database
+      dockerfile: Dockerfile
+      args:
+        - PG_PASS=
+    ports:
+      - "15432:5432"
