@@ -11,8 +11,8 @@ jobs:
         - LANG=ja_JP.UTF-8
     steps:
       - checkout
-          name: Install System Dependencies
-          command: apt-get update -qq && apt-get install -y build-essential postgresql libpq-dev
+      - name: Install System Dependencies
+        command: apt-get update -qq && apt-get install -y build-essential postgresql libpq-dev
   test:
     machine: True
     steps:
