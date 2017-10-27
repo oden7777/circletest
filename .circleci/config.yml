@@ -12,8 +12,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install System Dependencies
-          command: apt-get update -qq && apt-get install -y build-essential postgresql libpq-dev
-      - run:
           name: Run tests
           command: mvn test
