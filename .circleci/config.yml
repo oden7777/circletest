@@ -3,6 +3,7 @@ jobs:
   build:
     working_directory: ~/circletest
     docker:
+      - image: circleci/openjdk:8-jdk-browsers
       - image: postgres:9.6
         environmet:
         - POSTGRES_PASSWORD=pgpass
