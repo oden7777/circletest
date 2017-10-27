@@ -9,3 +9,12 @@ jobs:
           name: docker-compose up
           command: |
             docker-compose -f env/local/docker/docker-compose.yml up -d
+      - run:
+          name: Run tests
+          command: mvn test
+      - run:
+          name: Run tests2
+          command: echo $PG_PASS
+      - run:
+          name: Run tests3
+          command: echo test
