@@ -16,4 +16,7 @@ jobs:
           command: mvn test
       - run:
           name: Run tests2
-          command: echo ${PG_PASS}
+          command: echo $PG_PASS
+      - run:
+          name: Run tests3
+          command: echo test
