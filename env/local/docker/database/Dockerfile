@@ -3,7 +3,7 @@ FROM postgres:9.6.1
 ARG PG_PASS
 
 ENV POSTGRES_PASSWORD=${PG_PASS}
-ENV POSTGRES_DB contract
+ENV POSTGRES_DB hoge
 ENV LANG ja_JP.UTF-8
 
 COPY *.sql /docker-entrypoint-initdb.d/
