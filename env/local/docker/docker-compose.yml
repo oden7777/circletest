@@ -5,6 +5,6 @@ services:
       context: database
       dockerfile: Dockerfile
       args:
-        - PG_PASS=
+        PG_PASS: $SPRING_DATASOURCE_PASSWORD
     ports:
       - "15432:5432"
