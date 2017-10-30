@@ -1,21 +1,10 @@
-version: 2
-jobs:
-  build:
-    working_directory: ~/circletest
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: docker-compose build
-          command: |
-            docker-compose -f env/local/docker/docker-compose.yml build --no-cache
-      - run:
-          name: docker-compose up
-          command: |
-            docker-compose -f env/local/docker/docker-compose.yml up -d
-      - run:
-          name: Run tests
-          command: mvn test
-      - run:
-          name: Run tests2
-          command: echo $SPRING_DATASOURCE_PASSWORD
+general:
+  build_dir: ~/circletest
+machine:
+  services:
+    - docker
+test:
+  pre:
+    - sudo docker-compose -f env/test/docker/docker-compose.yml up -d
+  override:
+    - mvn test
